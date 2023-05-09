@@ -5,7 +5,8 @@ function Cart(props){
 
     <Fragment>
         <header>
-        <h1>Food App</h1><button >click</button>
+        <h1>Food App</h1>
+        <button>click</button>
         </header>
         
     </Fragment>
