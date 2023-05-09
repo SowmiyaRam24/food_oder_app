@@ -4,14 +4,9 @@ function Cart(props){
     return(
 
     <Fragment>
-    
-        <span>
-        <h1> hjhj</h1>
-        <button>
-            Cart
-        </button>
-        
-        </span>
+        <header>
+        <h1>Food App</h1><button >click</button>
+        </header>
         
     </Fragment>
     )
