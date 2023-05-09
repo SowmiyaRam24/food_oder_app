@@ -13,7 +13,7 @@ function Cart(props){
         
         </span>
         
-    </Fragment> 
+    </Fragment>
     )
   
 }
