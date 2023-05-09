@@ -1,4 +1,5 @@
-import './mealsItems.modules.css';
+import React from 'react';
+import classes from  './mealsItems.module.css';
 const items=[
         
     {  id:1,
@@ -29,13 +30,11 @@ const items=[
 function MealsItems(){
     const  mapping = items.map(item=><li>{item.name}<div>{item.content}</div>{item.price}</li>) 
     return(
-
-    
-        <div>
+        <section className={classes.meals}>
             <ul>
-              {mapping}
+              {mapping} 
             </ul>
-        </div>
+        </section>
         
         
     );

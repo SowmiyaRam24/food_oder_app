@@ -1,14 +1,13 @@
-import React from 'react';
+import React,{Fragment} from 'react';
 import  MealsItems from './mealsItems';
 import  MelasSummary from './mealsSummary';
 
 function Meals(){
     return(
-        <div>
-            
+        <Fragment>
             <MelasSummary/>
             <MealsItems/>
-        </div>
+        </Fragment>
     )
 }
  export default Meals;
