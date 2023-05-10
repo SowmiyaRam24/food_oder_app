@@ -1,8 +1,9 @@
-import Cart from "../Cart/Cart";
+
+import CartIcon from "../Cart/CartIcon";
 
 const HeaderCartButton=props=>{
     return<button>
-        <span><Cart/></span>
+        <span><CartIcon/></span>
             <span>cart</span>
         
         <span></span>
