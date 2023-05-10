@@ -1,9 +1,11 @@
+import Carts from '../UI/Carts';
 import React from 'react';
 import classes from  './mealsItems.module.css';
+import Items from './Items'
 const items=[
         
     {  id:1,
-       name:'sushi',
+       name:'Sushi',
        content:"finest fish and veggies",
        price:'$22.99'
    },
@@ -28,15 +30,15 @@ const items=[
 
 ]
 function MealsItems(){
-    const  mapping = items.map(item=><li>{item.name}<div>{item.content}</div>{item.price}</li>) 
+    const  mapping = items.map((item)=><Items key={item.id} name={item.name} content={item.content} price={item.price}/>) 
     return(
         <section className={classes.meals}>
+            <Carts>
             <ul>
               {mapping} 
             </ul>
+            </Carts>
         </section>
-        
-        
     );
 }
 export default MealsItems;
