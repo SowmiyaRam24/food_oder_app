@@ -1,13 +1,32 @@
-import React from 'react';
+import React,{useReducer} from 'react';
 import Cartcentent from './cart-centent';
-
+const defaultCartstate={
+  items:[],
+  totalAmount:0
+};
+const cartReducer=(state,action)=>{
+  if(action.type==='ADD'){
+    const updatedItem=state.items.concat(action.item);
+    const updateTotal=state.totalAmount+action.item.price*action.item.amount
+    return{
+      items:updatedItem,
+      totalAmount:updateTotal
+    }
+  }
+  return defaultCartstate;
+};
 function CartProvider(props) {
-    const addItemToCartHandeler=(item)=>{};
-    const removeItemFromCartHandeler=(id)=>{};
+  const [cartState,dispatchCartAction]=useReducer(cartReducer,defaultCartstate);
+    const addItemToCartHandeler=(item)=>{
+      dispatchCartAction({type:'ADD',item:item});
+    };
+    const removeItemFromCartHandeler=(id)=>{
+      dispatchCartAction({type:'REMOVE',id:id});
+    };
 
     const cartContext={
-        items:[],
-        totalAmount:0,
+        items:cartState.items,
+        totalAmount:cartState.totalAmount,
         addItem:addItemToCartHandeler,
         removeItem:removeItemFromCartHandeler
     };

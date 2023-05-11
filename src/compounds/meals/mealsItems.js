@@ -30,7 +30,7 @@ const items=[
 
 ]
 function MealsItems(){
-    const  mapping = items.map((item)=><Items key={item.id} name={item.name} content={item.content} price={item.price}/>) 
+    const  mapping = items.map((item)=><Items key={item.id} id={item.id}name={item.name} content={item.content} price={item.price}/>) 
     return(
         <section className={classes.meals}>
             <Carts>
