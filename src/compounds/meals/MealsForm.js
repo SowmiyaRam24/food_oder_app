@@ -20,7 +20,7 @@ const submitHandler=event=>{
          <Inputs
           ref={amountInputRef}
           label ="Amount" input={{
-            id:'amount',
+            id:'amount_'+props.id,
             type:'number',
             min:'0',
             max:'5',
