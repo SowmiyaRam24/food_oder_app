@@ -4,6 +4,7 @@ import MealsFrom from './MealsForm'
 import Cartcentent from '../../store/cart-centent';
 function Items(props){
     const cartCtx=useContext(Cartcentent)
+    
     const addToCartHandler=amount=>{
         cartCtx.addItem({
             id:props.id,
