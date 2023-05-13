@@ -7,37 +7,39 @@ const items=[
     {  id:1,
        name:'Sushi',
        content:"finest fish and veggies",
-       price:'$22.99'
+       price:'22.99'
    },
    {
       id:2,
       name:'Schnitzel',
       content:'A german specialty',
-      price:'$16.50'
+      price:'16.50'
    },
    {
       id:3,
       name:'Barbecue Burger',
       content:'American,raw,meaty',
-      price:'$12.99'
+      price:'12.99'
    },
    {
     id:4,
     name:'Green Bowl',
     content:'Healthy...and green',
-    price:'$13.66'
+    price:'13.66'
    }
 
 ]
 function MealsItems(){
-    const  mapping = items.map((item)=><Items key={item.id} id={item.id}name={item.name} content={item.content} price={item.price}/>) 
+    const  mapping = items.map((meal)=><Items key={meal.id} id={meal.id}name={meal.name} content={meal.content} price={meal.price}/>) 
     return(
         <section className={classes.meals}>
-            <Carts>
+          <Carts>
+
             <ul>
-              {mapping} 
+              {mapping}  
             </ul>
-            </Carts>
+          </Carts>
+            
         </section>
     );
 }

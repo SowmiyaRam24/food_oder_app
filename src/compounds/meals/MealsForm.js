@@ -10,7 +10,7 @@ const submitHandler=event=>{
    event.preventDefault();
    const enteredAmount=amountInputRef.current.value;
    const enteredAmountToNumber=+enteredAmount;
-   if(enteredAmount.trim().length===0||enteredAmountToNumber<1||enteredAmount>5){
+   if(enteredAmount.trim().length===0||enteredAmountToNumber<1||enteredAmountToNumber>5){
        setamountIsValid(false);
       return;
    }
@@ -20,7 +20,7 @@ const submitHandler=event=>{
          <Inputs
           ref={amountInputRef}
           label ="Amount" input={{
-            id:'amount_'+props.id,
+            id:props.id,
             type:'number',
             min:'0',
             max:'5',

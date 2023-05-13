@@ -5,7 +5,11 @@ import { useContext } from 'react';
 import Cartcentent from '../../store/cart-centent';
 const Cart=props=>{
   const cartCtx=useContext(Cartcentent);
-  const totalAmount=`$${cartCtx.totalAmount.toFixed(2)}`;
+  let  totalAmount = `$${cartCtx.totalAmount}`;
+    if (typeof cartCtx.totalAmount==='number'){
+     
+       totalAmount=`$${cartCtx.totalAmount.toFixed(2)}`;
+     }
   const hasItems=cartCtx.items.length>0;
   const cartItemRemoveHandler=id=>{
     cartCtx.removeItem(id);

@@ -4,7 +4,11 @@ import MealsFrom from './MealsForm'
 import Cartcentent from '../../store/cart-centent';
 function Items(props){
     const cartCtx=useContext(Cartcentent)
-    const price= props.price
+    let  price = `$${props.price}`;
+    if (typeof props.price==='number'){
+     price=`$${props.price.toFixed(2)}`;
+     }
+
     const addToCartHandler=amount=>{
         cartCtx.addItem({
             id:props.id,
@@ -17,7 +21,6 @@ function Items(props){
 
     <li>
         <div className={classes.meal}>
-             
         <div>
 
         <h3 className={classes.meals}>{props.name}</h3>
